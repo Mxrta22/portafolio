@@ -1,258 +1,476 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marta Haro | Portafolio Full Stack & DAM</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #0f0a19;
-            --card-bg: rgba(30, 20, 50, 0.6);
-            --accent-pink: #ff7eb9;
-            --accent-purple: #7a5fff;
-            --text-main: #ffffff;
-            --text-dim: #b0a8c0;
-            --glass: rgba(255, 255, 255, 0.05);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marta | Portfolio Full Stack & DAM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0a19;
+      --card-bg: rgba(30, 20, 50, 0.6);
+      --accent-pink: #ff7eb9;
+      --accent-purple: #7a5fff;
+      --text-main: #ffffff;
+      --text-dim: #b0a8c0;
+      --glass: rgba(255, 255, 255, 0.05);
+      --line: rgba(255,255,255,0.1);
+    }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: radial-gradient(circle at top right, #2d1b4e, #0f0a19); color: var(--text-main); line-height: 1.6; scroll-behavior: smooth; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: radial-gradient(circle at top right, #2d1b4e, #0f0a19);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
 
-        nav { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: var(--glass); backdrop-filter: blur(15px); padding: 12px 30px; border-radius: 50px; display: flex; gap: 20px; z-index: 1000; border: 1px solid rgba(255,255,255,0.1); }
-        nav a { color: var(--text-main); text-decoration: none; font-size: 0.8rem; font-weight: 600; transition: 0.3s; text-transform: uppercase; }
-        nav a:hover { color: var(--accent-pink); }
+    nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--glass);
+      backdrop-filter: blur(15px);
+      padding: 12px 24px;
+      border-radius: 50px;
+      display: flex;
+      gap: 18px;
+      z-index: 1000;
+      border: 1px solid var(--line);
+      max-width: 95vw;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
 
-        .hero { height: 70vh; display: flex; align-items: center; justify-content: space-between; padding: 0 10%; gap: 50px; }
-        .hero-text h1 { font-size: 4rem; font-weight: 800; line-height: 1.1; background: linear-gradient(to right, var(--accent-pink), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        .container { padding: 40px 10%; max-width: 1400px; margin: 0 auto; }
-        section { margin-bottom: 80px; }
-        h2 { font-size: 2rem; margin-bottom: 30px; display: flex; align-items: center; gap: 15px; border-bottom: 1px solid var(--glass); padding-bottom: 10px; color: var(--accent-pink); }
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: 0.3s;
+      text-transform: uppercase;
+    }
 
-        .card { background: var(--card-bg); padding: 35px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 30px; transition: 0.3s; }
-        .card:hover { border-color: var(--accent-purple); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-        
-        .card-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
-        .date { font-size: 0.85rem; color: var(--accent-purple); font-weight: 800; }
-        .company { font-size: 1.2rem; font-weight: 600; color: var(--text-main); display: block; margin-bottom: 10px; }
-        
-        h3 { font-size: 1.4rem; color: var(--accent-pink); margin-bottom: 10px; }
-        p, li { color: var(--text-dim); font-size: 1rem; margin-bottom: 12px; }
-        ul { margin-left: 20px; list-style-type: square; }
+    nav a:hover { color: var(--accent-pink); }
 
-        .tag-container { display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0; }
-        .tag { background: var(--glass); padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(255,255,255,0.1); color: var(--text-main); }
-        .skill-tag { border-color: var(--accent-pink); color: var(--accent-pink); }
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 120px 10% 40px;
+      gap: 50px;
+    }
 
-        .nomination-banner { background: linear-gradient(90deg, rgba(122, 95, 255, 0.2), rgba(255, 126, 185, 0.2)); border: 2px solid var(--accent-pink); padding: 25px; border-radius: 20px; margin-bottom: 50px; text-align: center; }
+    .hero-text h1 {
+      font-size: clamp(3rem, 7vw, 5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      background: linear-gradient(to right, var(--accent-pink), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        .btn-github { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-purple); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: 0.3s; margin-top: 10px; }
-        .btn-github:hover { background: var(--accent-pink); transform: translateY(-2px); }
+    .hero-text p {
+      margin-top: 18px;
+      max-width: 720px;
+      color: var(--text-dim);
+      font-size: 1.05rem;
+    }
 
-        footer { text-align: center; padding: 60px 0; color: var(--text-dim); border-top: 1px solid var(--glass); }
+    .container {
+      padding: 20px 10% 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
 
-        @media (max-width: 900px) { .hero { flex-direction: column; text-align: center; height: auto; padding-top: 120px; } .container { padding: 40px 5%; } nav { width: 95%; font-size: 0.7rem; } }
-    </style>
+    section { margin-bottom: 80px; }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 1px solid var(--glass);
+      padding-bottom: 10px;
+      color: var(--accent-pink);
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 35px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.05);
+      margin-bottom: 30px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      border-color: var(--accent-purple);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transform: translateY(-2px);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .date {
+      font-size: 0.85rem;
+      color: var(--accent-purple);
+      font-weight: 800;
+    }
+
+    .company {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      color: var(--accent-pink);
+      margin-bottom: 10px;
+    }
+
+    p, li {
+      color: var(--text-dim);
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      margin-left: 20px;
+      list-style-type: square;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0;
+    }
+
+    .tag {
+      background: var(--glass);
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-main);
+    }
+
+    .skill-tag {
+      border-color: var(--accent-pink);
+      color: var(--accent-pink);
+    }
+
+    .nomination-banner {
+      background: linear-gradient(90deg, rgba(122, 95, 255, 0.2), rgba(255, 126, 185, 0.2));
+      border: 2px solid var(--accent-pink);
+      padding: 25px;
+      border-radius: 20px;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .btn-github {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-purple);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .btn-github:hover {
+      background: var(--accent-pink);
+      transform: translateY(-2px);
+    }
+
+    .btn-link {
+      color: var(--accent-pink);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 0;
+      color: var(--text-dim);
+      border-top: 1px solid var(--glass);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 140px;
+      }
+
+      .container { padding: 20px 5% 40px; }
+      nav { width: 95%; }
+    }
+  </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#home">Inicio</a>
-        <a href="#sobre-mi">Acerca de</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#educacion">Educación</a>
-        <a href="#premios">Logros e Idiomas</a>
-    </nav>
+  <nav>
+    <a href="#home">Inicio</a>
+    <a href="#sobre-mi">Acerca de</a>
+    <a href="#experiencia">Trabajos</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#educacion">Educación</a>
+    <a href="#premios">Logros e Idiomas</a>
+  </nav>
 
-    <header class="hero" id="home">
-        <div class="hero-text">
-            <h1>Marta Haro</h1>
-            <p>Estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM) | Full Stack & Tech Enthusiast | Node.js · Java · SQL</p>
-            <div class="tag-container">
-                <span class="tag skill-tag">Node.js</span><span class="tag skill-tag">Java</span><span class="tag skill-tag">SQL</span><span class="tag skill-tag">Android</span><span class="tag skill-tag">WebSockets</span>
-            </div>
+  <header class="hero" id="home">
+    <div class="hero-text">
+      <h1>Marta</h1>
+      <p>Estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM) | Full Stack & Tech Enthusiast | Node.js · Java · SQL</p>
+      <div class="tag-container">
+        <span class="tag skill-tag">Node.js</span>
+        <span class="tag skill-tag">Java</span>
+        <span class="tag skill-tag">SQL</span>
+        <span class="tag skill-tag">Android</span>
+        <span class="tag skill-tag">WebSockets</span>
+        <span class="tag skill-tag">Vue.js</span>
+      </div>
+    </div>
+
+    <div style="font-family: 'Fira Code', monospace; background: #1a1425; padding: 25px; border-radius: 15px; border: 1px solid var(--accent-purple); min-width: 320px;">
+      <p style="color: var(--accent-pink); margin: 0;">> Marta.current_role = "Developer";</p>
+      <p style="color: var(--accent-pink); margin: 0;">> Marta.focus = "Software Engineering";</p>
+      <p style="color: var(--accent-pink); margin: 0;">> Marta.nominations = 2;</p>
+      <p style="color: var(--accent-pink); margin: 0;">> _</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section id="sobre-mi">
+      <h2>Acerca de</h2>
+      <div class="card">
+        <p>Me encuentro en la etapa final de mi formación en el <b>Institut Pedralbes</b>, enfocada en el desarrollo de aplicaciones que aporten valor real a las personas.</p>
+        <p>Mi día a día consiste en programar en <b>Java</b> y explorar las posibilidades que ofrece <b>Android</b> para crear herramientas móviles útiles e intuitivas.</p>
+        <p>Más allá de la programación pura, me interesa entender cómo se gestionan los datos, desde bases de datos relacionales y documentales hasta la comunicación en tiempo real mediante <b>WebSockets</b>. También me gusta integrar modelos de <b>IA</b> en mis proyectos.</p>
+        <p>Soy una persona curiosa, con facilidad para adaptarme a nuevas arquitecturas y con muchas ganas de empezar mi trayectoria profesional en un equipo donde pueda seguir aprendiendo y aportar soluciones prácticas.</p>
+      </div>
+    </section>
+
+    <div class="nomination-banner">
+      <h3 style="color: white; margin-bottom: 10px;">🏆 ¡Nominadas otra vez!</h3>
+      <p style="color: white; margin: 0;">Nominadas una vez más a los premios de la <b>Fundació Barcelona FP 2026</b> por nuestra capacidad de innovación y compromiso con la tecnología social.</p>
+    </div>
+
+    <section id="experiencia">
+      <h2>Trabajos</h2>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="date">Feb 2026 - Actualidad</span>
+          <span class="tag">En remoto</span>
         </div>
-        <div style="font-family: 'Fira Code', monospace; background: #1a1425; padding: 25px; border-radius: 15px; border: 1px solid var(--accent-purple); min-width: 320px;">
-            <p style="color: var(--accent-pink); margin: 0;">> Marta.current_role = "Developer";</p>
-            <p style="color: var(--accent-pink); margin: 0;">> Marta.focus = "Software Engineering";</p>
-            <p style="color: var(--accent-pink); margin: 0;">> Marta.nominations = 2;</p>
-            <p style="color: var(--accent-pink); margin: 0;">> _</p>
+        <span class="company">Associació Cultural Storyville · Becaria</span>
+        <p>Mantenimiento y optimización de la web corporativa utilizando WordPress. Durante estas prácticas he trabajado en la edición y puesta a punto de la web para el festival de este año.</p>
+        <p>Actualización de la estructura de itinerarios, revisión de contenidos y aseguramiento de que cada sección refleje la energía del festival antes del inicio de inscripciones. <a class="btn-link" href="https://bcn.shag.cat/" target="_blank">Ver proyecto</a></p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="date">Sept 2023 - Actualidad</span>
+          <span class="tag">Presencial</span>
         </div>
-    </header>
+        <span class="company">Events · Acomodadora y Taquillera</span>
+        <p>Responsable de la atención directa al público y la gestión operativa en un recinto cultural. Este rol me ha permitido desarrollar resolución de problemas, comunicación asertiva y trabajo bajo presión.</p>
+        <ul>
+          <li><b>Gestión de sistemas:</b> ejecución del proceso de venta y cobro mediante terminales electrónicos.</li>
+          <li><b>Atención al cliente:</b> asesoramiento personalizado sobre servicios y productos.</li>
+          <li><b>Logística y seguridad:</b> control de acceso y acomodación, garantizando fluidez y orden.</li>
+          <li><b>Apoyo digital:</b> gestión ocasional de redes sociales del teatro para difusión de eventos.</li>
+        </ul>
+      </div>
 
-    <main class="container">
+      <div class="card">
+        <div class="card-header">
+          <span class="date">Feb 2023 - Jun 2023</span>
+          <span class="tag">Presencial</span>
+        </div>
+        <span class="company">Ninfa · Dependienta (Contrato de prácticas)</span>
+        <p>Gestión operativa de establecimiento comercial con enfoque multilingüe y logístico. Perfeccioné mi organización técnica mediante sistemas de gestión de paquetería.</p>
+        <ul>
+          <li><b>Logística y digital:</b> administración de puntos de recogida/devolución con Nacex, GLS y Boyacá.</li>
+          <li><b>Soporte documental:</b> gestión de impresión de documentos, inventario y devoluciones.</li>
+          <li><b>Atención multilingüe:</b> resolución de incidencias en catalán, castellano e inglés.</li>
+          <li><b>Operaciones de caja:</b> control de cobros en efectivo y terminales.</li>
+        </ul>
+      </div>
+    </section>
 
-        <section id="sobre-mi">
-            <h2>Acerca de</h2>
-            <div class="card">
-                <p>Me encuentro en la etapa final de mi formación en el <b>Institut Pedralbes</b>, enfocada en el desarrollo de aplicaciones que aporten valor real a las personas. ✨</p>
-                <p>Mi día a día consiste en programar en <b>Java ☕</b> y explorar las posibilidades que ofrece <b>Android 📱</b> para crear herramientas móviles que sean realmente útiles e intuitivas.</p>
-                <p>Más allá de la programación pura, me interesa entender cómo se gestionan los datos 📊, desde su persistencia en bases de datos relacionales y documentales hasta la comunicación en tiempo real mediante <b>WebSockets 🔌</b>. También dedico parte de mi tiempo a integrar modelos de <b>inteligencia artificial 🤖</b> en mis proyectos, buscando siempre que la tecnología sea una ayuda eficiente y discreta.</p>
-                <p>Soy una persona curiosa 🔍, con facilidad para adaptarme a nuevas arquitecturas y con muchas ganas de empezar mi trayectoria profesional en un equipo donde pueda seguir aprendiendo y aportar soluciones prácticas. 🌟</p>
-            </div>
-        </section>
+    <section id="proyectos">
+      <h2>Proyectos</h2>
 
-        <div class="nomination-banner">
-            <h3 style="color: white; margin-bottom: 10px;">🏆 ¡Nuevamente nominados!</h3>
-            <p style="color: white; margin: 0;">Nominados una vez más a los premios de la <b>Fundació Barcelona FP 2026</b> por nuestra capacidad de innovación y compromiso con la tecnología social.</p>
+      <div class="card">
+        <h3>Projecte ENGINY - Consorci d'Educació de Barcelona</h3>
+        <p>Desarrollo de una aplicación web para la digitalización del Programa Enginy. Recurso orientador para prevenir el absentismo escolar y fomentar la descubrimiento vocacional en alumnado de ESO.</p>
+        <div class="tag-container">
+          <span class="tag">Stack MEVN</span>
+          <span class="tag">MongoDB Atlas</span>
+          <span class="tag">Vue 3.5</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Git</span>
+        </div>
+        <ul>
+          <li><b>Gestión NoSQL:</b> diseño y consulta de bases de datos no relacionales.</li>
+          <li><b>Interfaz reactiva:</b> creación de componentes modernos con Vuetify.</li>
+          <li><b>Metodología:</b> trabajo con Agile/Kanban y control de versiones.</li>
+        </ul>
+        <a href="https://github.com/inspedralbes/tr2-reptes-tr2-g5" class="btn-github" target="_blank">Repositorio ENGINY</a>
+      </div>
+
+      <div class="card">
+        <h3>FitAI - Entrenamiento Inteligente con IA y WebSockets</h3>
+        <p>Plataforma web para sesiones de entrenamiento colaborativo en tiempo real.</p>
+        <div class="tag-container">
+          <span class="tag">TensorFlow.js</span>
+          <span class="tag">WebSockets</span>
+          <span class="tag">Docker</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Express</span>
+        </div>
+        <ul>
+          <li><b>IA y Computer Vision:</b> integración de MoveNet para detectar puntos clave y contar repeticiones.</li>
+          <li><b>Arquitectura:</b> separación de API REST y servidor WebSocket.</li>
+          <li><b>DevOps:</b> configuración con Docker Compose y Nginx como reverse proxy.</li>
+        </ul>
+        <a href="https://github.com/inspedralbes/tr1-type-racer-royale-dam_25_26_tr1g2" class="btn-github" target="_blank">Repositorio FitAI</a>
+      </div>
+
+      <div class="card">
+        <h3>Gestión de Incidencias Técnicas - Backend & Infraestructura</h3>
+        <p>Plataforma web integral para la gestión de incidencias, técnicos y actuaciones.</p>
+        <div class="tag-container">
+          <span class="tag">Node.js</span>
+          <span class="tag">Express.js</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Sequelize</span>
+        </div>
+        <ul>
+          <li><b>Arquitectura:</b> back-end con Node.js y Express.js.</li>
+          <li><b>Gestión de datos:</b> RDBMS MySQL/PostgreSQL con ORM Sequelize.</li>
+          <li><b>Seguridad:</b> sistema de roles jerárquico.</li>
+          <li><b>DevOps:</b> documentación técnica, backups y troubleshooting.</li>
+        </ul>
+        <a href="https://github.com/inspedralbes/projecte-1dam-24-25-dampj-eric_marta" class="btn-github" target="_blank">Repositorio Incidencias</a>
+      </div>
+
+      <div class="card">
+        <h3>Juego en Unity (Proyecto TR3)</h3>
+        <p>Desarrollo de un videojuego interactivo aplicando lógica de programación en C#, gestión de estados y diseño de niveles en Unity.</p>
+        <div class="tag-container">
+          <span class="tag">Unity</span>
+          <span class="tag">C#</span>
+          <span class="tag">Game Design</span>
+        </div>
+        <a href="https://github.com/inspedralbes/tr3-joc-martaharo" class="btn-github" target="_blank">Repositorio Unity</a>
+      </div>
+
+      <div class="card">
+        <h3>Pla d'empresa Presta't</h3>
+        <p>Plan de negocio integral analizando viabilidad financiera, ODS (Acció pel clima y reducció de bretxa digital) y viabilidad económica para un sistema de economía circular.</p>
+      </div>
+    </section>
+
+    <section id="educacion">
+      <h2>Educación</h2>
+
+      <div class="card">
+        <div class="card-header"><span class="date">2024 - 2026</span></div>
+        <span class="company">Institut Pedralbes</span>
+        <h3>Grado Superior en DAM</h3>
+        <p>Desarrollo de soluciones integrales con enfoque en arquitectura de servicios y gestión avanzada de datos.</p>
+        <ul>
+          <li><b>Backend:</b> APIs con Node.js y Express, escalabilidad con Docker.</li>
+          <li><b>Gestión de datos:</b> SQL y NoSQL.</li>
+          <li><b>Comunicaciones:</b> tiempo real con WebSockets y consumo con Fetch API.</li>
+          <li><b>IA aplicada:</b> integración de modelos preentrenados y agentes inteligentes.</li>
+          <li><b>Herramientas:</b> Git, Postman y XML.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="date">2022 - 2024</span></div>
+        <span class="company">IES Can Puig</span>
+        <h3>Bachillerato de Humanidades y Ciencias Sociales</h3>
+        <p>Enfoque en desarrollo de pensamiento crítico y análisis de realidad cultural y económica.</p>
+        <ul>
+          <li><b>Análisis:</b> fundamentos de economía de mercado y modelos de negocio.</li>
+          <li><b>Lógica:</b> métodos matemáticos para interpretación de datos sociales.</li>
+          <li><b>Comunicación:</b> redacción y síntesis en múltiples lenguas.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="premios">
+      <h2>Logros e idiomas</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        <div class="card">
+          <h3>🏆 Nominadas otra vez - Fundació Barcelona FP 2026</h3>
+          <p>El proyecto vuelve a estar nominado a la Fundació Barcelona FP 2026 por su innovación y compromiso con la tecnología social.</p>
         </div>
 
-        <section id="experiencia">
-            <h2>Experiencia</h2>
-            
-            <div class="card">
-                <div class="card-header"><span class="date">Feb 2026 - Actualidad (4 meses)</span><span class="tag">En remoto</span></div>
-                <span class="company">Associacio Cultural Storyville · Becario</span>
-                <p>Mantenimiento y optimización de la web corporativa utilizando <b>WordPress</b>. Estas semanas de prácticas han sido un no parar, metiéndome de lleno en la edición y puesta a punto de la web para el festival de este año.</p>
-                <p>Actualización de la estructura de nuevos itinerarios de clase y aseguramiento de que cada sección refleje la energía del festival antes del inicio de inscripciones. <a href="https://bcn.shag.cat/" target="_blank" style="color: var(--accent-pink);">Ver Proyecto</a></p>
-            </div>
+        <div class="card">
+          <h3>🏆 Finalista - Premios FPEmprèn 2025</h3>
+          <p>Seleccionada entre los mejores proyectos de FP del área metropolitana. <b>SafeHer</b> implicó plan de negocio, pitch e impacto en ODS ante la gala en CaixaForum Barcelona.</p>
+        </div>
 
-            <div class="card">
-                <div class="card-header"><span class="date">Sept 2023 - Actualidad (2 años 9 meses)</span><span class="tag">Presencial</span></div>
-                <span class="company">Events · Acomodadora y Taquillera</span>
-                <p>Responsable de la atención directa al público y la gestión operativa en un recinto cultural. Este rol me ha permitido desarrollar una gran capacidad de resolución de problemas en entornos de ritmo rápido y una comunicación asertiva.</p>
-                <ul>
-                    <li><b>Gestión de sistemas:</b> Ejecución integral del proceso de venta y cobro mediante terminales electrónicos.</li>
-                    <li><b>Atención al cliente:</b> Asesoramiento personalizado sobre servicios y productos.</li>
-                    <li><b>Logística y seguridad:</b> Control de acceso y acomodación, garantizando fluidez, orden y cumplimiento de normativas.</li>
-                    <li><b>Apoyo digital:</b> Gestión ocasional de las redes sociales del teatro colaborando en la difusión de eventos.</li>
-                </ul>
-            </div>
+        <div class="card">
+          <h3>🥉 3er Puesto - Concurso iFest 2024</h3>
+          <p>Premiada por la innovación al diseñar una solución de seguridad femenina que integra IA y wearables.</p>
+        </div>
 
-            <div class="card">
-                <div class="card-header"><span class="date">Feb 2023 - Jun 2023 (5 meses)</span><span class="tag">Presencial</span></div>
-                <span class="company">Ninfa · Dependienta (Contrato de prácticas)</span>
-                <p>Gestión operativa de establecimiento comercial con enfoque multilingüe y logístico. Perfeccioné mi organización técnica mediante sistemas de gestión de paquetería.</p>
-                <ul>
-                    <li><b>Logística y Digital:</b> Administración de puntos de recogida/devolución utilizando programas específicos de <b>Nacex, GLS y Boyacá</b>.</li>
-                    <li><b>Soporte Documental:</b> Gestión de impresión de documentos, registros técnicos, inventario y devoluciones de prensa.</li>
-                    <li><b>Atención Multilingüe:</b> Asesoramiento y resolución de incidencias en Catalán, Castellano e Inglés.</li>
-                    <li><b>Operaciones de Caja:</b> Control de cobros en efectivo y terminales, garantizando precisión en cierres diarios.</li>
-                </ul>
-            </div>
-        </section>
+        <div class="card">
+          <h3>🗣️ Idiomas</h3>
+          <p><b>Catalán:</b> Competencia nativa (C1 Suficiència - Generalitat 2024).</p>
+          <p><b>Español:</b> Competencia nativa.</p>
+          <p><b>Inglés:</b> B2 First Certificate (Cambridge 2022).</p>
+        </div>
+      </div>
 
-        <section id="proyectos">
-            <h2>Proyectos</h2>
+      <div class="card" style="margin-top: 30px;">
+        <h3>Aptitudes técnicas</h3>
+        <div class="tag-container">
+          <span class="tag">Java</span><span class="tag">PostgreSQL</span><span class="tag">Node.js</span>
+          <span class="tag">Express.js</span><span class="tag">Docker</span><span class="tag">Vue.js</span>
+          <span class="tag">MongoDB</span><span class="tag">Arquitectura de software</span><span class="tag">WebSockets</span>
+          <span class="tag">Sequelize</span><span class="tag">Git</span><span class="tag">Postman</span>
+        </div>
+      </div>
+    </section>
 
-            <div class="card">
-                <h3>Projecte ENGINY - Consorci d'Educació de Barcelona</h3>
-                <p>Desarrollo de una aplicación web para la digitalización del Programa Enginy. Recurso orientador para prevenir el absentismo escolar y fomentar la descubrimiento vocacional en alumnos de ESO.</p>
-                <div class="tag-container">
-                    <span class="tag">Stack MEVN</span><span class="tag">MongoDB Atlas</span><span class="tag">Vue 3.5</span><span class="tag">Node.js</span><span class="tag">Git</span>
-                </div>
-                <ul>
-                    <li><b>Gestión NoSQL:</b> Diseño y consulta de bases de datos no relacionales.</li>
-                    <li><b>Interfaz Reactiva:</b> Creación de componentes modernos con Vuetify.</li>
-                    <li><b>Metodología:</b> Entorno Agile/Kanban y control de versiones.</li>
-                </ul>
-                <a href="https://github.com/inspedralbes/tr2-reptes-tr2-g5" class="btn-github" target="_blank">Repositorio ENGINY</a>
-            </div>
+  </main>
 
-            <div class="card">
-                <h3>FitAI - Entrenamiento Inteligente con IA y WebSockets</h3>
-                <p>Plataforma web para sesiones de entrenamiento colaborativo en tiempo real.</p>
-                <div class="tag-container">
-                    <span class="tag">TensorFlow.js</span><span class="tag">WebSockets</span><span class="tag">Docker</span><span class="tag">MySQL</span><span class="tag">Express</span>
-                </div>
-                <ul>
-                    <li><b>IA & Computer Vision:</b> Integración del modelo MoveNet para detectar puntos clave del cuerpo y contar repeticiones automáticamente.</li>
-                    <li><b>Arquitectura:</b> Separación de API REST y servidor de WebSockets para comunicación fluida.</li>
-                    <li><b>DevOps:</b> Configuración con Docker Compose y Nginx como Reverse Proxy.</li>
-                </ul>
-                <a href="https://github.com/inspedralbes/tr1-type-racer-royale-dam_25_26_tr1g2" class="btn-github" target="_blank">Repositorio FitAI</a>
-            </div>
-
-            <div class="card">
-                <h3>Gestión de Incidencias Técnicas - Backend & Infraestructura</h3>
-                <p>Plataforma web integral para la gestión de incidencias, técnicos y actuaciones.</p>
-                <ul>
-                    <li><b>Arquitectura:</b> Back-end utilizando Node.js con Express.js.</li>
-                    <li><b>Gestión de Datos:</b> RDBMS MySQL/PostgreSQL con ORM Sequelize.</li>
-                    <li><b>Seguridad:</b> Sistema de roles jerárquico (Usuarios, Técnicos, Responsables y Administradores).</li>
-                    <li><b>DevOps:</b> Documentación técnica avanzada, backups y resolución de problemas (troubleshooting).</li>
-                </ul>
-                <a href="https://github.com/inspedralbes/projecte-1dam-24-25-dampj-eric_marta" class="btn-github" target="_blank">Repositorio Incidencias</a>
-            </div>
-
-            <div class="card">
-                <h3>Juego en Unity (Proyecto TR3)</h3>
-                <p>Desarrollo de videojuego interactivo aplicando lógica de programación en C#, gestión de estados y diseño de niveles en el motor Unity.</p>
-                <a href="https://github.com/inspedralbes/tr3-joc-martaharo" class="btn-github" target="_blank">Repositorio Unity</a>
-            </div>
-            
-            <div class="card">
-                <h3>Pla d'empresa Presta't</h3>
-                <p>Plan de negocio integral analizando viabilidad financiera, ODS (Acció pel clima y reducció de bretxa digital) y viabilidad económica para un sistema de economía circular.</p>
-            </div>
-        </section>
-
-        <section id="educacion">
-            <h2>Educación</h2>
-            
-            <div class="card">
-                <div class="card-header"><span class="date">2024 - 2026</span></div>
-                <span class="company">Institut Pedralbes</span>
-                <h3>Grado Superior en DAM</h3>
-                <p>Desarrollo de soluciones integrales con enfoque en arquitectura de servicios y gestión avanzada de datos.</p>
-                <ul>
-                    <li><b>Backend:</b> Creación de APIs con Node.js y Express, escalabilidad con Docker.</li>
-                    <li><b>Gestión de Datos:</b> SQL y NoSQL (MongoDB).</li>
-                    <li><b>Comunicaciones:</b> Tiempo real con WebSockets y consumo mediante Fetch API.</li>
-                    <li><b>IA Aplicada:</b> Integración de modelos preentrenados y diseño de agentes inteligentes.</li>
-                    <li><b>Herramientas:</b> Git, Postman y diseño en XML.</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <div class="card-header"><span class="date">2022 - 2024</span></div>
-                <span class="company">IES Can Puig</span>
-                <h3>Bachillerato Humanidades y Ciencias Sociales</h3>
-                <p>Enfoque en desarrollo de pensamiento crítico y análisis profundo de realidad cultural y económica.</p>
-                <ul>
-                    <li><b>Análisis:</b> Fundamentos de economía de mercado y modelos de negocio.</li>
-                    <li><b>Lógica:</b> Métodos matemáticos para interpretación de datos sociales.</li>
-                    <li><b>Comunicación:</b> Alta capacidad de redacción y síntesis en múltiples lenguas.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="premios">
-            <h2>Reconocimientos, Idiomas y Aptitudes</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                <div class="card">
-                    <h3>🏆 Finalista - Premios FPEmprèn 2025</h3>
-                    <p>Seleccionada entre los mejores proyectos de FP del área metropolitana. El proyecto <b>SafeHer</b> implicó un plan de negocio avanzado, pitch y justificación de impacto en ODS ante la gala en CaixaForum Barcelona.</p>
-                </div>
-                <div class="card">
-                    <h3>🥉 3er Puesto - Concurso iFest 2024</h3>
-                    <p>Premiada por la innovación al diseñar una solución de seguridad femenina que integra <b>IA y wearables</b>. Valoración de análisis de mercado (14,2M usuarias) y viabilidad técnica.</p>
-                </div>
-                <div class="card">
-                    <h3>🗣️ Idiomas</h3>
-                    <p><b>Catalán:</b> Competencia nativa (C1 Suficiència - Generalitat 2024).</p>
-                    <p><b>Español:</b> Competencia nativa.</p>
-                    <p><b>Inglés:</b> B2 First Certificate (Cambridge 2022).</p>
-                </div>
-            </div>
-
-            <div class="card" style="margin-top: 30px;">
-                <h3>Aptitudes Técnicas</h3>
-                <div class="tag-container">
-                    <span class="tag">Java</span><span class="tag">PostgreSQL</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">Docker</span><span class="tag">Vue.js</span><span class="tag">MongoDB</span><span class="tag">Arquitectura de Software</span><span class="tag">WebSockets</span><span class="tag">Sequelize</span><span class="tag">Git</span><span class="tag">Postman</span>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>© 2026 Marta Haro | <a href="https://www.linkedin.com/in/marta-haro/" style="color: var(--accent-pink);">LinkedIn</a> | <a href="https://github.com/mxrta22" style="color: var(--accent-pink);">GitHub</a></p>
-        <p style="font-size: 0.8rem; margin-top: 10px;">Desarrollado con pasión por la tecnología social y el código limpio.</p>
-    </footer>
+  <footer>
+    <p>© 2026 Marta | <a href="https://www.linkedin.com/in/marta-haro/" style="color: var(--accent-pink);">LinkedIn</a> | <a href="https://github.com/mxrta22" style="color: var(--accent-pink);">GitHub</a></p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Desarrollado con pasión por la tecnología social y el código limpio.</p>
+  </footer>
 
 </body>
 </html>
