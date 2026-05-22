@@ -55,12 +55,13 @@
 
     nav a:hover { color: var(--accent-pink); }
 
+    /* Ajuste para que la primera pantalla sea única */
     .hero {
-      min-height: 70vh;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 120px 10% 40px;
+      padding: 0 10%;
       gap: 50px;
     }
 
@@ -77,11 +78,11 @@
       margin-top: 18px;
       max-width: 720px;
       color: var(--text-dim);
-      font-size: 1.05rem;
+      font-size: 1.1rem;
     }
 
     .container {
-      padding: 20px 10% 40px;
+      padding: 60px 10% 40px;
       max-width: 1400px;
       margin: 0 auto;
     }
@@ -203,12 +204,6 @@
       transform: translateY(-2px);
     }
 
-    .btn-link {
-      color: var(--accent-pink);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
     footer {
       text-align: center;
       padding: 60px 0;
@@ -219,11 +214,11 @@
     @media (max-width: 900px) {
       .hero {
         flex-direction: column;
+        justify-content: center;
         text-align: center;
-        padding-top: 140px;
+        padding-top: 60px;
       }
-
-      .container { padding: 20px 5% 40px; }
+      .container { padding: 40px 5%; }
       nav { width: 95%; }
     }
   </style>
@@ -232,25 +227,22 @@
 
   <nav>
     <a href="#home">Inicio</a>
-    <a href="#sobre-mi">Acerca de</a>
-    <a href="#experiencia">Trabajos</a>
     <a href="#proyectos">Proyectos</a>
+    <a href="#experiencia">Trabajos</a>
     <a href="#educacion">Educación</a>
     <a href="#premios">Logros</a>
-    <a href="#idiomas">Idiomas</a>
   </nav>
 
   <header class="hero" id="home">
     <div class="hero-text">
       <h1>Marta</h1>
-      <p>Estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM) | Full Stack & Tech Enthusiast | Node.js · Java · SQL</p>
+      <p>Estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM) | Full Stack & Tech Enthusiast | Creando soluciones digitales con impacto social real.</p>
       <div class="tag-container">
         <span class="tag skill-tag">Node.js</span>
         <span class="tag skill-tag">Java</span>
-        <span class="tag skill-tag">SQL</span>
-        <span class="tag skill-tag">Android</span>
-        <span class="tag skill-tag">WebSockets</span>
         <span class="tag skill-tag">Vue.js</span>
+        <span class="tag skill-tag">Android</span>
+        <span class="tag skill-tag">SQL</span>
       </div>
     </div>
 
@@ -269,9 +261,7 @@
       <h2>Acerca de</h2>
       <div class="card">
         <p>Me encuentro en la etapa final de mi formación en el <b>Institut Pedralbes</b>, enfocada en el desarrollo de aplicaciones que aporten valor real a las personas.</p>
-        <p>Mi día a día consiste en programar en <b>Java</b> y explorar las posibilidades que ofrece <b>Android</b> para crear herramientas móviles útiles e intuitivas.</p>
-        <p>Más allá de la programación pura, me interesa entender cómo se gestionan los datos, desde bases de datos relacionales y documentales hasta la comunicación en tiempo real mediante <b>WebSockets</b>. También me gusta integrar modelos de <b>IA</b> en mis proyectos.</p>
-        <p>Soy una persona curiosa, con facilidad para adaptarme a nuevas arquitecturas y con muchas ganas de empezar mi trayectoria profesional en un equipo donde pueda seguir aprendiendo y aportar soluciones prácticas.</p>
+        <p>Mi día a día consiste en programar en <b>Java</b> y explorar las posibilidades que ofrece <b>Android</b> para crear herramientas móviles útiles e intuitivas. También me apasiona integrar modelos de <b>IA</b> y sistemas de comunicación en tiempo real mediante <b>WebSockets</b>.</p>
       </div>
     </section>
 
@@ -280,112 +270,37 @@
       <p style="color: white; margin: 0;">Nominadas una vez más a los premios de la <b>Fundació Barcelona FP 2026</b> por nuestra capacidad de innovación y compromiso con la tecnología social.</p>
     </div>
 
-    <section id="experiencia">
-      <h2>Trabajos</h2>
-
-      <div class="card">
-        <div class="card-header">
-          <span class="date">Feb 2026 - Actualidad</span>
-          <span class="tag">En remoto</span>
-        </div>
-        <span class="company">Associació Cultural Storyville · Becaria</span>
-        <p>Mantenimiento y optimización de la web corporativa utilizando WordPress. Durante estas prácticas he trabajado en la edición y puesta a punto de la web para el festival de este año.</p>
-        <p>Actualización de la estructura de itinerarios, revisión de contenidos y aseguramiento de que cada sección refleje la energía del festival antes del inicio de inscripciones. <a class="btn-link" href="https://bcn.shag.cat/" target="_blank">Ver proyecto</a></p>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <span class="date">Sept 2023 - Actualidad</span>
-          <span class="tag">Presencial</span>
-        </div>
-        <span class="company">Events · Acomodadora y Taquillera</span>
-        <p>Responsable de la atención directa al público y la gestión operativa en un recinto cultural. Este rol me ha permitido desarrollar resolución de problemas, comunicación asertiva y trabajo bajo presión.</p>
-        <ul>
-          <li><b>Gestión de sistemas:</b> ejecución del proceso de venta y cobro mediante terminales electrónicos.</li>
-          <li><b>Atención al cliente:</b> asesoramiento personalizado sobre servicios y productos.</li>
-          <li><b>Logística y seguridad:</b> control de acceso y acomodación, garantizando fluidez y orden.</li>
-          <li><b>Apoyo digital:</b> gestión ocasional de redes sociales del teatro para difusión de eventos.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <span class="date">Feb 2023 - Jun 2023</span>
-          <span class="tag">Presencial</span>
-        </div>
-        <span class="company">Ninfa · Dependienta (Contrato de prácticas)</span>
-        <p>Gestión operativa de establecimiento comercial con enfoque multilingüe y logístico. Perfeccioné mi organización técnica mediante sistemas de gestión de paquetería.</p>
-        <ul>
-          <li><b>Logística y digital:</b> administración de puntos de recogida/devolución con Nacex, GLS y Boyacá.</li>
-          <li><b>Soporte documental:</b> gestión de impresión de documentos, inventario y devoluciones.</li>
-          <li><b>Atención multilingüe:</b> resolución de incidencias en catalán, castellano e inglés.</li>
-          <li><b>Operaciones de caja:</b> control de cobros en efectivo y terminales.</li>
-        </ul>
-      </div>
-    </section>
-
     <section id="proyectos">
-      <h2>Proyectos</h2>
+      <h2>Proyectos destacados</h2>
 
       <div class="card">
-        <h3>Projecte ENGINY - Consorci d'Educació de Barcelona</h3>
-        <p>Desarrollo de una aplicación web para la digitalización del Programa Enginy. Recurso orientador para prevenir el absentismo escolar y fomentar la descubrimiento vocacional en alumnado de ESO.</p>
+        <h3>🛡️ SafeHer</h3>
+        <p>Proyecto de dispositivo inteligente para la seguridad femenina, centrado en alerta inmediata, grabación automática, detección asistida por IA y rutas seguras.</p>
         <div class="tag-container">
-          <span class="tag">Stack MEVN</span>
-          <span class="tag">MongoDB Atlas</span>
-          <span class="tag">Vue 3.5</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">Git</span>
+          <span class="tag">AI Integration</span>
+          <span class="tag">Wearables</span>
+          <span class="tag">Mobile App</span>
+          <span class="tag">Social Impact</span>
         </div>
         <ul>
-          <li><b>Gestión NoSQL:</b> diseño y consulta de bases de datos no relacionales.</li>
-          <li><b>Interfaz reactiva:</b> creación de componentes modernos con Vuetify.</li>
-          <li><b>Metodología:</b> trabajo con Agile/Kanban y control de versiones.</li>
+          <li><b>Seguridad Activa:</b> Detección de situaciones de riesgo mediante patrones de audio y biometría.</li>
+          <li><b>Automatización:</b> Activación de protocolos de emergencia y grabación en la nube.</li>
         </ul>
-        <a href="https://github.com/inspedralbes/tr2-reptes-tr2-g5" class="btn-github" target="_blank">Repositorio ENGINY</a>
       </div>
 
       <div class="card">
-        <h3>FitAI - Entrenamiento Inteligente con IA y WebSockets</h3>
-        <p>Plataforma web para sesiones de entrenamiento colaborativo en tiempo real.</p>
+        <h3>🔄 Presta't</h3>
+        <p>Modelo de negocio basado en la economía circular y el sistema "Hardware as a Service". Presta't busca reducir la brecha digital permitiendo el acceso flexible a tecnología de alto rendimiento mientras se minimiza el impacto ambiental mediante la reutilización y el reciclaje técnico.</p>
         <div class="tag-container">
-          <span class="tag">TensorFlow.js</span>
-          <span class="tag">WebSockets</span>
-          <span class="tag">Docker</span>
-          <span class="tag">MySQL</span>
-          <span class="tag">Express</span>
+          <span class="tag">Economía Circular</span>
+          <span class="tag">ODS</span>
+          <span class="tag">Viabilidad Económica</span>
         </div>
-        <ul>
-          <li><b>IA y Computer Vision:</b> integración de MoveNet para detectar puntos clave y contar repeticiones.</li>
-          <li><b>Arquitectura:</b> separación de API REST y servidor WebSocket.</li>
-          <li><b>DevOps:</b> configuración con Docker Compose y Nginx como reverse proxy.</li>
-        </ul>
-        <a href="https://github.com/inspedralbes/tr1-type-racer-royale-dam_25_26_tr1g2" class="btn-github" target="_blank">Repositorio FitAI</a>
       </div>
 
       <div class="card">
-        <h3>Gestión de Incidencias Técnicas - Backend & Infraestructura</h3>
-        <p>Plataforma web integral para la gestión de incidencias, técnicos y actuaciones.</p>
-        <div class="tag-container">
-          <span class="tag">Node.js</span>
-          <span class="tag">Express.js</span>
-          <span class="tag">MySQL</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Sequelize</span>
-        </div>
-        <ul>
-          <li><b>Arquitectura:</b> back-end con Node.js y Express.js.</li>
-          <li><b>Gestión de datos:</b> RDBMS MySQL/PostgreSQL con ORM Sequelize.</li>
-          <li><b>Seguridad:</b> sistema de roles jerárquico.</li>
-          <li><b>DevOps:</b> documentación técnica, backups y troubleshooting.</li>
-        </ul>
-        <a href="https://github.com/inspedralbes/projecte-1dam-24-25-dampj-eric_marta" class="btn-github" target="_blank">Repositorio Incidencias</a>
-      </div>
-
-      <div class="card">
-        <h3>Juego en Unity (Proyecto TR3)</h3>
-        <img src="12-2.jpg" alt="Captura del juego en Unity" style="width:100%; border-radius:16px; margin:15px 0; border:1px solid rgba(255,255,255,0.1);">
-        <p>Desarrollo de un videojuego interactivo aplicando lógica de programación en C#, gestión de estados y diseño de niveles en Unity.</p>
+        <h3>🎮 Juego en Unity (Proyecto TR3)</h3>
+        <p>Desarrollo de un videojuego interactivo aplicando lógica de programación en C#, gestión de estados complejos y diseño de niveles en el motor Unity.</p>
         <div class="tag-container">
           <span class="tag">Unity</span>
           <span class="tag">C#</span>
@@ -395,63 +310,50 @@
       </div>
 
       <div class="card">
-        <h3>Pla d'empresa Presta't</h3>
-        <p>Plan de negocio integral analizando viabilidad financiera, ODS (Acció pel clima y reducció de bretxa digital) y viabilidad económica para un sistema de economía circular.</p>
+        <h3>Projecte ENGINY - Consorci d'Educació</h3>
+        <p>Aplicación web (Stack MEVN) para la prevención del absentismo escolar y descubrimiento vocacional.</p>
+        <div class="tag-container">
+          <span class="tag">Vue 3.5</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">MongoDB</span>
+        </div>
+        <a href="https://github.com/inspedralbes/tr2-reptes-tr2-g5" class="btn-github" target="_blank">Repositorio ENGINY</a>
+      </div>
+    </section>
+
+    <section id="experiencia">
+      <h2>Experiencia</h2>
+      <div class="card">
+        <div class="card-header"><span class="date">2026 - Actualidad</span></div>
+        <span class="company">Storyville · Becaria IT</span>
+        <p>Mantenimiento de web corporativa en WordPress y optimización de itinerarios digitales.</p>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="date">2023 - Actualidad</span></div>
+        <span class="company">Events · Atención al público</span>
+        <p>Gestión operativa, resolución de incidencias y comunicación directa en recintos culturales.</p>
       </div>
     </section>
 
     <section id="educacion">
       <h2>Educación</h2>
-
       <div class="card">
-        <div class="card-header"><span class="date">2024 - 2026</span></div>
-        <span class="company">Institut Pedralbes</span>
+        <span class="company">Institut Pedralbes (2024-2026)</span>
         <h3>Grado Superior en DAM</h3>
-        <p>Desarrollo de soluciones integrales con enfoque en arquitectura de servicios y gestión avanzada de datos.</p>
-        <ul>
-          <li><b>Backend:</b> APIs con Node.js y Express, escalabilidad con Docker.</li>
-          <li><b>Gestión de datos:</b> SQL y NoSQL.</li>
-          <li><b>Comunicaciones:</b> tiempo real con WebSockets y consumo con Fetch API.</li>
-          <li><b>IA aplicada:</b> integración de modelos preentrenados y agentes inteligentes.</li>
-          <li><b>Herramientas:</b> Git, Postman y XML.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-header"><span class="date">2022 - 2024</span></div>
-        <span class="company">IES Can Puig</span>
-        <h3>Bachillerato de Humanidades y Ciencias Sociales</h3>
-        <p>Enfoque en desarrollo de pensamiento crítico y análisis de realidad cultural y económica.</p>
-        <ul>
-          <li><b>Análisis:</b> fundamentos de economía de mercado y modelos de negocio.</li>
-          <li><b>Lógica:</b> métodos matemáticos para interpretación de datos sociales.</li>
-          <li><b>Comunicación:</b> redacción y síntesis en múltiples lenguas.</li>
-        </ul>
+        <p>Especialización en desarrollo de aplicaciones multiplataforma y gestión de datos.</p>
       </div>
     </section>
 
     <section id="premios">
       <h2>Logros y premios</h2>
-
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
         <div class="card">
-          <h3>🏆 ¡Nuevamente nominadas!</h3>
-          <p>Nominadas una vez más a los premios de la <b>Fundació Barcelona FP 2026</b> por nuestra capacidad de innovación y compromiso con la tecnología social.</p>
-        </div>
-
-        <div class="card">
-          <h3>🛡️ SafeHer</h3>
-          <p>Proyecto de dispositivo inteligente para la seguridad femenina, centrado en alerta inmediata, grabación automática, detección asistida por IA y rutas seguras.</p>
-        </div>
-
-        <div class="card">
           <h3>🏆 Finalista - Premios FPEmprèn 2025</h3>
-          <p>Seleccionada entre los mejores proyectos de FP del área metropolitana. <b>SafeHer</b> implicó plan de negocio, pitch e impacto en ODS ante la gala en CaixaForum Barcelona.</p>
+          <p>Seleccionada entre los mejores proyectos del área metropolitana por la viabilidad de SafeHer.</p>
         </div>
-
         <div class="card">
           <h3>🥉 3er Puesto - Concurso iFest 2024</h3>
-          <p>Premiada por la innovación al diseñar una solución de seguridad femenina que integra IA y wearables.</p>
+          <p>Premiada por la innovación tecnológica al integrar IA en wearables de seguridad.</p>
         </div>
       </div>
     </section>
@@ -459,21 +361,7 @@
     <section id="idiomas">
       <h2>Idiomas</h2>
       <div class="card">
-        <p><b>Catalán:</b> Competencia nativa (C1 Suficiència - Generalitat 2024).</p>
-        <p><b>Español:</b> Competencia nativa.</p>
-        <p><b>Inglés:</b> B2 First Certificate (Cambridge 2022).</p>
-      </div>
-    </section>
-
-    <section id="aptitudes">
-      <h2>Aptitudes técnicas</h2>
-      <div class="card">
-        <div class="tag-container">
-          <span class="tag">Java</span><span class="tag">PostgreSQL</span><span class="tag">Node.js</span>
-          <span class="tag">Express.js</span><span class="tag">Docker</span><span class="tag">Vue.js</span>
-          <span class="tag">MongoDB</span><span class="tag">Arquitectura de software</span><span class="tag">WebSockets</span>
-          <span class="tag">Sequelize</span><span class="tag">Git</span><span class="tag">Postman</span>
-        </div>
+        <p><b>Catalán:</b> C1 Suficiència | <b>Español:</b> Nativo | <b>Inglés:</b> B2 First Certificate</p>
       </div>
     </section>
 
@@ -481,7 +369,6 @@
 
   <footer>
     <p>© 2026 Marta | <a href="https://www.linkedin.com/in/marta-haro/" style="color: var(--accent-pink);">LinkedIn</a> | <a href="https://github.com/mxrta22" style="color: var(--accent-pink);">GitHub</a></p>
-    <p style="font-size: 0.8rem; margin-top: 10px;">Desarrollado con pasión por la tecnología social y el código limpio.</p>
   </footer>
 
 </body>
