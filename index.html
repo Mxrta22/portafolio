@@ -3,360 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marta Haro | Full Stack Developer</title>
-    <!-- Tipografía Inter (elegante y minimalista) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Marta Haro | Portafolio DAM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #ffffff;
-            --text: #111111;
-            --text-muted: #666666;
-            --border: #eeeeee;
-            --font: 'Inter', sans-serif;
+            --bg: #0f0a19;
+            --card-bg: rgba(30, 20, 50, 0.6);
+            --accent-pink: #ff7eb9;
+            --accent-purple: #7a5fff;
+            --text-main: #ffffff;
+            --text-dim: #b0a8c0;
+            --glass: rgba(255, 255, 255, 0.05);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: var(--font);
-            background-color: var(--bg);
-            color: var(--text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at top right, #2d1b4e, #0f0a19);
+            color: var(--text-main);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        /* Menú de Navegación */
+        /* Navbar Estilo Glassmorphism */
         nav {
             position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 30px 8%;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            padding: 15px 40px;
+            border-radius: 50px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            z-index: 100;
+            gap: 30px;
+            z-index: 1000;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        nav .logo {
-            font-weight: 600;
+        nav a {
+            color: var(--text-main);
             text-decoration: none;
-            color: var(--text);
-            letter-spacing: -0.5px;
-        }
-
-        nav .links a {
-            text-decoration: none;
-            color: var(--text-muted);
-            margin-left: 30px;
             font-size: 0.9rem;
-            transition: color 0.2s;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
-        nav .links a:hover {
-            color: var(--text);
-        }
+        nav a:hover { color: var(--accent-pink); }
 
-        /* Secciones */
-        section {
-            padding: 140px 8% 60px 8%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            font-weight: 500;
-        }
-
-        /* Hero / Inicio */
-        #home {
+        /* Hero Section */
+        .hero {
             height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-top: 0;
-        }
-
-        #home h1 {
-            font-size: clamp(2.5rem, 7vw, 5.5rem);
-            font-weight: 600;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            margin-bottom: 24px;
-        }
-
-        #home p {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-            color: var(--text-muted);
-            max-width: 700px;
-            font-weight: 300;
-        }
-
-        /* Sobre Mí */
-        #about .about-content {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            font-weight: 300;
-            line-height: 1.4;
-            max-width: 900px;
-            letter-spacing: -0.5px;
-        }
-
-        #about .about-content span {
-            color: var(--text-muted);
-        }
-
-        /* Tecnologías (Stack) */
-        .stack-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 30px;
-        }
-
-        .tech-tag {
-            border: 1px solid var(--border);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* Proyectos */
-        .project-list {
-            display: flex;
-            flex-direction: column;
-            gap: 60px;
-        }
-
-        .project-item {
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 40px;
-        }
-
-        .project-header {
-            display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 15px;
+            padding: 0 10%;
+            gap: 50px;
         }
 
-        .project-title {
-            font-size: 1.75rem;
-            font-weight: 500;
-            letter-spacing: -0.5px;
+        .hero-text h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            line-height: 1;
+            background: linear-gradient(to right, var(--accent-pink), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
         }
 
-        .project-date {
-            color: var(--text-muted);
+        .hero-text p {
+            font-size: 1.4rem;
+            color: var(--text-dim);
+            max-width: 500px;
+        }
+
+        /* Terminal Estilo Fiona */
+        .terminal {
+            background: #1a1425;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 1px solid var(--accent-purple);
+            font-family: 'Fira Code', monospace;
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background: #2d243d;
+            padding: 10px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .red { background: #ff5f56; }
+        .yellow { background: #ffbd2e; }
+        .green { background: #27c93f; }
+
+        .terminal-body {
+            padding: 20px;
+            color: var(--accent-pink);
             font-size: 0.9rem;
         }
 
-        .project-desc {
-            color: var(--text-muted);
-            max-width: 800px;
-            margin-bottom: 20px;
-        }
+        /* Contenedor Secciones */
+        .container { padding: 80px 10%; }
 
-        /* Trayectoria / Experiencia */
-        .timeline {
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
             display: flex;
-            flex-direction: column;
-            gap: 40px;
+            align-items: center;
+            gap: 15px;
         }
 
-        .timeline-item {
+        h2::after {
+            content: "";
+            height: 2px;
+            flex-grow: 1;
+            background: linear-gradient(to right, var(--accent-purple), transparent);
+        }
+
+        /* Cards de Proyectos y Experiencia */
+        .grid {
             display: grid;
-            grid-template-columns: 250px 1fr;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
 
-        .timeline-date {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .timeline-info h3 {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-bottom: 4px;
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-pink);
+            box-shadow: 0 10px 30px rgba(255, 126, 185, 0.1);
         }
 
-        .timeline-info h4 {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            font-weight: 400;
-            margin-bottom: 10px;
-        }
+        .card h3 { color: var(--accent-pink); margin-bottom: 10px; }
+        .card span { font-size: 0.8rem; color: var(--accent-purple); font-weight: bold; text-transform: uppercase; }
+        .card p { color: var(--text-dim); font-size: 0.95rem; margin: 15px 0; }
 
-        .timeline-info p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Contacto */
-        #contact .huge-link {
-            font-size: clamp(2rem, 6vw, 4.5rem);
-            color: var(--text);
+        .btn-github {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent-purple);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 8px;
             text-decoration: none;
+            font-size: 0.8rem;
             font-weight: 600;
-            letter-spacing: -2px;
-            display: inline-block;
-            margin-bottom: 20px;
-            transition: opacity 0.2s;
+            transition: 0.3s;
         }
 
-        #contact .huge-link:hover {
-            opacity: 0.4;
+        .btn-github:hover { background: var(--accent-pink); }
+
+        /* Idiomas y Logros */
+        .badges { display: flex; flex-wrap: wrap; gap: 10px; }
+        .badge {
+            background: var(--glass);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            border: 1px solid var(--accent-purple);
         }
 
-        /* Footer */
         footer {
-            padding: 60px 8%;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 100px 0 40px;
+            color: var(--text-dim);
+            font-size: 0.8rem;
         }
 
-        footer a {
-            color: var(--text);
-            text-decoration: none;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav { padding: 20px 5%; }
-            section { padding: 100px 5% 40px 5%; }
-            .timeline-item {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-            footer { padding: 40px 5%; flex-direction: column; gap: 20px; }
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; justify-content: center; padding-top: 100px; }
+            .hero-text h1 { font-size: 3.5rem; }
+            nav { width: 90%; padding: 15px; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#home" class="logo">mh.</a>
-        <div class="links">
-            <a href="#about">Sobre mí</a>
-            <a href="#projects">Proyectos</a>
-            <a href="#experience">Trayectoria</a>
-            <a href="#contact">Contacto</a>
-        </div>
+        <a href="#home">Inicio</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#otros">Logros</a>
     </nav>
 
-    <section id="home">
-        <h1>Marta Haro</h1>
-        <p>Estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM). Creando aplicaciones eficientes, escalables y con un propósito real.</p>
-    </section>
-
-    <section id="about">
-        <span class="section-title">Sobre mí</span>
-        <div class="about-content">
-            <p>Me encuentro en la etapa final de mi formación en el <span>Institut Pedralbes</span>. Mi día a día consiste en programar en Java y explorar el ecosistema móvil. Más allá de escribir código, disfruto entendiendo cómo se gestionan los datos en tiempo real mediante WebSockets y cómo integrar modelos de IA para crear herramientas útiles e intuitivas.</p>
+    <header class="hero" id="home">
+        <div class="hero-text">
+            <h1>Hola, soy<br>Marta Haro.</h1>
+            <p>Estudiante de DAM enfocada en <b>Full Stack & IA</b>. Especializada en crear soluciones escalables con Node.js, Java y WebSockets.</p>
         </div>
-        <div class="stack-grid">
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">SQL</span>
-            <span class="tech-tag">WebSockets</span>
-            <span class="tech-tag">Docker</span>
-            <span class="tech-tag">Vue.js</span>
-            <span class="tech-tag">MongoDB</span>
-            <span class="tech-tag">Android</span>
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <div class="terminal-body">
+                <p>> Marta.current_location = "Barcelona";</p>
+                <p>> Marta.skills = ["Java", "Node.js", "Vue 3", "IA"];</p>
+                <p>> Marta.status = "Buscando nuevos retos";</p>
+                <p>> _ <span style="animation: blink 1s infinite;">|</span></p>
+            </div>
         </div>
-    </section>
+    </header>
 
-    <section id="projects">
-        <span class="section-title">Proyectos Destacados</span>
-        <div class="project-list">
-            
-            <div class="project-item">
-                <div class="project-header">
-                    <h3 class="project-title">FitAI — Entrenamiento Inteligente</h3>
-                    <span class="project-date">2025</span>
+    <main class="container">
+        
+        <section id="experiencia">
+            <h2>Experiencia</h2>
+            <div class="grid">
+                <div class="card">
+                    <span>Feb 2026 - Actualidad</span>
+                    <h3>Becaria Full Stack</h3>
+                    <p><b>Storyville:</b> Mantenimiento y optimización de la web corporativa del festival. Trabajo intensivo en el despliegue de itinerarios y gestión de inscripciones internacionales.</p>
                 </div>
-                <p class="project-desc">Plataforma web para sesiones de entrenamiento colaborativo en tiempo real. Integra Computer Vision (MoveNet) para detectar puntos corporales, con arquitectura de servidor dual (API REST y WebSockets) y entorno virtualizado mediante Docker.</p>
-                <div class="stack-grid">
-                    <span class="tech-tag">TensorFlow.js</span>
-                    <span class="tech-tag">WebSockets</span>
-                    <span class="tech-tag">Docker</span>
-                    <span class="tech-tag">Node.js</span>
+                <div class="card">
+                    <span>2023 - 2026</span>
+                    <h3>Atención y Logística</h3>
+                    <p>Events & Ninfa: Gestión de sistemas de venta, resolución de incidencias en entornos multilingües y administración de flujos de trabajo bajo presión.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="project-item">
-                <div class="project-header">
-                    <h3 class="project-title">Projecte ENGINY</h3>
-                    <span class="project-date">2026</span>
+        <section id="educacion" style="margin-top: 80px;">
+            <h2>Educación</h2>
+            <div class="grid">
+                <div class="card">
+                    <span>2024 - 2026</span>
+                    <h3>GS Desarrollo de Aplicaciones Multiplataforma</h3>
+                    <p>Institut Pedralbes. Especialización en microservicios, persistencia de datos (SQL/NoSQL) e IA aplicada.</p>
                 </div>
-                <p class="project-desc">Desarrollo de una aplicación web para la digitalización del Programa Enginy del Consorci d'Educació de Barcelona, con el fin de prevenir el absentismo escolar a través de itinerarios inclusivos orientadores.</p>
-                <div class="stack-grid">
-                    <span class="tech-tag">MongoDB</span>
-                    <span class="tech-tag">Express</span>
-                    <span class="tech-tag">Vue 3</span>
-                    <span class="tech-tag">Node.js</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="experience">
-        <span class="section-title">Trayectoria</span>
-        <div class="timeline">
-
-            <div class="timeline-item">
-                <div class="timeline-date">Feb. 2026 — Actualidad</div>
-                <div class="timeline-info">
-                    <h3>Becaria de Desarrollo Web</h3>
-                    <h4>Associacio Cultural Storyville</h4>
-                    <p>Mantenimiento, optimización y puesta a punto de la web corporativa y la plataforma del festival internacional.</p>
+                <div class="card">
+                    <span>2022 - 2024</span>
+                    <h3>Bachillerato Humanidades y C. Sociales</h3>
+                    <p>IES Can Puig. Desarrollo de pensamiento crítico, análisis de datos y competencias lingüísticas avanzadas.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="timeline-item">
-                <div class="timeline-date">2024 — 2026</div>
-                <div class="timeline-info">
-                    <h3>Grado Superior en DAM</h3>
-                    <h4>Institut Pedralbes</h4>
-                    <p>Ingeniería de Software e Informática. Finalista en los Premios FPEmprèn 2025 y 3er puesto iFest por el proyecto SafeHer.</p>
+        <section id="proyectos" style="margin-top: 80px;">
+            <h2>Proyectos Destacados</h2>
+            <div class="grid">
+                <div class="card">
+                    <span>Stack MEVN</span>
+                    <h3>Projecte ENGINY</h3>
+                    <p>Aplicación para el Consorci d'Educació de Barcelona. Dashboard de administración complejo y gestión de datos con MongoDB.</p>
+                    <a href="https://github.com/inspedralbes/tr2-reptes-tr2-g5" class="btn-github" target="_blank">Ver Código en GitHub</a>
+                </div>
+                <div class="card">
+                    <span>IA & WebSockets</span>
+                    <h3>FitAI - Train AI</h3>
+                    <p>Plataforma de entrenamiento con visión artificial (TensorFlow.js) y multijugador en tiempo real.</p>
+                    <a href="https://github.com/inspedralbes/tr1-type-racer-royale-dam_25_26_tr1g2" class="btn-github" target="_blank">Ver Código en GitHub</a>
+                </div>
+                <div class="card">
+                    <span>Backend & Docker</span>
+                    <h3>Gestión de Incidencias</h3>
+                    <p>Sistema integral con gestión de roles, seguridad avanzada y arquitectura escalable con Node.js y Express.</p>
                 </div>
             </div>
+        </section>
 
-        </div>
-    </section>
+        <section id="otros" style="margin-top: 80px;">
+            <div class="grid">
+                <div class="card">
+                    <h2>Logros</h2>
+                    <p>🏆 Finalista Premios FPEmprèn 2025 (SafeHer)</p>
+                    <p>🥉 3er Puesto iFest 2024 (Innovación IoT)</p>
+                </div>
+                <div class="card">
+                    <h2>Idiomas</h2>
+                    <div class="badges">
+                        <span class="badge">Catalán (C1 Suficiència)</span>
+                        <span class="badge">Inglés (B2 First)</span>
+                        <span class="badge">Castellano (Nativo)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="contact">
-        <span class="section-title">Contacto</span>
-        <a href="mailto:tu-correo@ejemplo.com" class="huge-link">¿Hablamos?</a>
-        <p style="color: var(--text-muted);">Disponible para incorporarme a equipos de desarrollo e innovación.</p>
-    </section>
+    </main>
 
     <footer>
-        <p>© 2026 Marta Haro</p>
-        <p><a href="https://www.linkedin.com/in/marta-haro/" target="_blank">LinkedIn</a> / <a href="https://bcn.shag.cat/" target="_blank">Proyecto Reciente</a></p>
+        <p>© 2026 Marta Haro | <a href="https://www.linkedin.com/in/marta-haro/" style="color: var(--accent-pink);">LinkedIn</a></p>
     </footer>
 
+    <style>
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
 </body>
 </html>
