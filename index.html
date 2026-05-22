@@ -39,9 +39,6 @@
       gap: 18px;
       z-index: 1000;
       border: 1px solid var(--line);
-      max-width: 95vw;
-      overflow-x: auto;
-      white-space: nowrap;
     }
 
     nav a {
@@ -55,7 +52,7 @@
 
     nav a:hover { color: var(--accent-pink); }
 
-    /* Ajuste para que la primera pantalla sea única */
+    /* Primera pantalla completa */
     .hero {
       height: 100vh;
       display: flex;
@@ -82,7 +79,7 @@
     }
 
     .container {
-      padding: 60px 10% 40px;
+      padding: 80px 10% 40px;
       max-width: 1400px;
       margin: 0 auto;
     }
@@ -106,13 +103,6 @@
       border-radius: 20px;
       border: 1px solid rgba(255,255,255,0.05);
       margin-bottom: 30px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      border-color: var(--accent-purple);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      transform: translateY(-2px);
     }
 
     .card-header {
@@ -149,10 +139,7 @@
       margin-bottom: 12px;
     }
 
-    ul {
-      margin-left: 20px;
-      list-style-type: square;
-    }
+    ul { margin-left: 20px; list-style-type: square; }
 
     .tag-container {
       display: flex;
@@ -170,20 +157,6 @@
       color: var(--text-main);
     }
 
-    .skill-tag {
-      border-color: var(--accent-pink);
-      color: var(--accent-pink);
-    }
-
-    .nomination-banner {
-      background: linear-gradient(90deg, rgba(122, 95, 255, 0.2), rgba(255, 126, 185, 0.2));
-      border: 2px solid var(--accent-pink);
-      padding: 25px;
-      border-radius: 20px;
-      margin-bottom: 50px;
-      text-align: center;
-    }
-
     .btn-github {
       display: inline-flex;
       align-items: center;
@@ -194,32 +167,11 @@
       border-radius: 8px;
       text-decoration: none;
       font-size: 0.9rem;
-      font-weight: 600;
-      transition: 0.3s;
       margin-top: 10px;
     }
 
-    .btn-github:hover {
-      background: var(--accent-pink);
-      transform: translateY(-2px);
-    }
-
-    footer {
-      text-align: center;
-      padding: 60px 0;
-      color: var(--text-dim);
-      border-top: 1px solid var(--glass);
-    }
-
     @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        padding-top: 60px;
-      }
-      .container { padding: 40px 5%; }
-      nav { width: 95%; }
+      .hero { flex-direction: column; text-align: center; justify-content: center; }
     }
   </style>
 </head>
@@ -227,28 +179,23 @@
 
   <nav>
     <a href="#home">Inicio</a>
+    <a href="#sobre-mi">Acerca de</a>
     <a href="#proyectos">Proyectos</a>
-    <a href="#experiencia">Trabajos</a>
+    <a href="#experiencia">Experiencia</a>
     <a href="#educacion">Educación</a>
-    <a href="#premios">Logros</a>
   </nav>
 
   <header class="hero" id="home">
     <div class="hero-text">
-      <h1>Marta</h1>
-      <p>Estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM) | Full Stack & Tech Enthusiast | Creando soluciones digitales con impacto social real.</p>
+      <h1>Marta Haro</h1>
+      <p>Estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM) | Full Stack & Tech Enthusiast | Node.js · Java · SQL</p>
       <div class="tag-container">
-        <span class="tag skill-tag">Node.js</span>
-        <span class="tag skill-tag">Java</span>
-        <span class="tag skill-tag">Vue.js</span>
-        <span class="tag skill-tag">Android</span>
-        <span class="tag skill-tag">SQL</span>
+        <span class="tag">Node.js</span><span class="tag">Java</span><span class="tag">SQL</span><span class="tag">Vue.js</span>
       </div>
     </div>
 
     <div style="font-family: 'Fira Code', monospace; background: #1a1425; padding: 25px; border-radius: 15px; border: 1px solid var(--accent-purple); min-width: 320px;">
       <p style="color: var(--accent-pink); margin: 0;">> Marta.status = "Building the future";</p>
-      <p style="color: var(--accent-pink); margin: 0;">> Marta.specialty = "AI & Real-time Apps";</p>
       <p style="color: var(--accent-pink); margin: 0;">> Marta.stack = ["Node.js", "Java", "Vue"];</p>
       <p style="color: var(--accent-pink); margin: 0;">> Marta.passion = "Social Technology";</p>
       <p style="color: var(--accent-pink); margin: 0;">> _</p>
@@ -260,115 +207,134 @@
     <section id="sobre-mi">
       <h2>Acerca de</h2>
       <div class="card">
-        <p>Me encuentro en la etapa final de mi formación en el <b>Institut Pedralbes</b>, enfocada en el desarrollo de aplicaciones que aporten valor real a las personas.</p>
-        <p>Mi día a día consiste en programar en <b>Java</b> y explorar las posibilidades que ofrece <b>Android</b> para crear herramientas móviles útiles e intuitivas. También me apasiona integrar modelos de <b>IA</b> y sistemas de comunicación en tiempo real mediante <b>WebSockets</b>.</p>
+        <p>Me encuentro en la etapa final de mi formación en el Institut Pedralbes, enfocada en el desarrollo de aplicaciones que aporten valor real a las personas. ✨</p>
+        <p>Mi día a día consiste en programar en Java ☕ y explorar las posibilidades que ofrece Android 📱 para crear herramientas móviles que sean realmente útiles e intuitivas.</p>
+        <p>Más allá de la programación pura, me interesa entender cómo se gestionan los datos 📊, desde su persistencia en bases de datos relacionales y documentales hasta la comunicación en tiempo real mediante WebSockets 🔌. También dedico parte de mi tiempo a integrar modelos de inteligencia artificial 🤖 en mis proyectos, buscando siempre que la tecnología sea una ayuda eficiente y discreta.</p>
+        <p>Soy una persona curiosa 🔍, con facilidad para adaptarme a nuevas arquitecturas y con muchas ganas de empezar mi trayectoria profesional en un equipo donde pueda seguir aprendiendo y aportar soluciones prácticas.🌟</p>
       </div>
     </section>
 
-    <div class="nomination-banner">
-      <h3 style="color: white; margin-bottom: 10px;">🏆 ¡Nuevamente nominadas!</h3>
-      <p style="color: white; margin: 0;">Nominadas una vez más a los premios de la <b>Fundació Barcelona FP 2026</b> por nuestra capacidad de innovación y compromiso con la tecnología social.</p>
-    </div>
-
     <section id="proyectos">
-      <h2>Proyectos destacados</h2>
+      <h2>Proyectos</h2>
 
       <div class="card">
         <h3>🛡️ SafeHer</h3>
         <p>Proyecto de dispositivo inteligente para la seguridad femenina, centrado en alerta inmediata, grabación automática, detección asistida por IA y rutas seguras.</p>
-        <div class="tag-container">
-          <span class="tag">AI Integration</span>
-          <span class="tag">Wearables</span>
-          <span class="tag">Mobile App</span>
-          <span class="tag">Social Impact</span>
-        </div>
-        <ul>
-          <li><b>Seguridad Activa:</b> Detección de situaciones de riesgo mediante patrones de audio y biometría.</li>
-          <li><b>Automatización:</b> Activación de protocolos de emergencia y grabación en la nube.</li>
-        </ul>
       </div>
 
       <div class="card">
         <h3>🔄 Presta't</h3>
-        <p>Modelo de negocio basado en la economía circular y el sistema "Hardware as a Service". Presta't busca reducir la brecha digital permitiendo el acceso flexible a tecnología de alto rendimiento mientras se minimiza el impacto ambiental mediante la reutilización y el reciclaje técnico.</p>
-        <div class="tag-container">
-          <span class="tag">Economía Circular</span>
-          <span class="tag">ODS</span>
-          <span class="tag">Viabilidad Económica</span>
-        </div>
+        <p>Presta't es una plataforma de economía colaborativa basada en el modelo "Hardware as a Service". El proyecto se centra en facilitar el alquiler de tecnología de alta gama para reducir la brecha digital y fomentar la economía circular (minería urbana), permitiendo el acceso a equipos premium sin grandes inversiones iniciales.</p>
       </div>
 
       <div class="card">
-        <h3>🎮 Juego en Unity (Proyecto TR3)</h3>
-        <p>Desarrollo de un videojuego interactivo aplicando lógica de programación en C#, gestión de estados complejos y diseño de niveles en el motor Unity.</p>
-        <div class="tag-container">
-          <span class="tag">Unity</span>
-          <span class="tag">C#</span>
-          <span class="tag">Game Design</span>
-        </div>
-        <a href="https://github.com/inspedralbes/tr3-joc-martaharo" class="btn-github" target="_blank">Repositorio Unity</a>
-      </div>
-
-      <div class="card">
-        <h3>Projecte ENGINY - Consorci d'Educació</h3>
-        <p>Aplicación web (Stack MEVN) para la prevención del absentismo escolar y descubrimiento vocacional.</p>
-        <div class="tag-container">
-          <span class="tag">Vue 3.5</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">MongoDB</span>
-        </div>
+        <h3>Projecte ENGINY - Consorci d'Educació de Barcelona</h3>
+        <p>Desarrollo de una aplicación web para la digitalización del Programa Enginy del Consorci d'Educació de Barcelona. El objetivo principal es ofrecer un recurso orientador e inclusivo para prevenir el absentismo escolar y fomentar la descubrimiento vocacional en alumnos de ESO.</p>
+        <ul>
+          <li><b>Stack MEVN:</b> Implementación completa con MongoDB, Express, Vue 3 y Node.js.</li>
+          <li><b>Gestión NoSQL:</b> Diseño y consulta de bases de datos no relacionales con MongoDB Atlas.</li>
+          <li><b>Interfaz Reactiva:</b> Creación de componentes modernos con Vue 3.5 y Vuetify.</li>
+          <li><b>Metodología:</b> Desarrollo bajo entorno Agile/Kanban y control de versiones con Git.</li>
+        </ul>
         <a href="https://github.com/inspedralbes/tr2-reptes-tr2-g5" class="btn-github" target="_blank">Repositorio ENGINY</a>
+      </div>
+
+      <div class="card">
+        <h3>FitAI - Entrenamiento Inteligente</h3>
+        <p>Plataforma web para sesiones de entrenamiento colaborativo en tiempo real con IA.</p>
+        <ul>
+          <li><b>IA & Computer Vision:</b> Integración de MoveNet (TensorFlow.js) para contar repeticiones automáticamente.</li>
+          <li><b>Arquitectura:</b> Separación de API REST y servidor de WebSockets.</li>
+          <li><b>DevOps:</b> Configuración con Docker y Nginx como Reverse Proxy.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>🎮 Juego en Unity</h3>
+        <p>Desarrollo de un videojuego interactivo aplicando lógica de programación en C#, gestión de estados y diseño de niveles en Unity.</p>
+        <a href="https://github.com/inspedralbes/tr3-joc-martaharo" class="btn-github" target="_blank">Repositorio Unity</a>
       </div>
     </section>
 
     <section id="experiencia">
       <h2>Experiencia</h2>
+
       <div class="card">
-        <div class="card-header"><span class="date">2026 - Actualidad</span></div>
-        <span class="company">Storyville · Becaria IT</span>
-        <p>Mantenimiento de web corporativa en WordPress y optimización de itinerarios digitales.</p>
+        <div class="card-header"><span class="date">feb. 2026 - actualidad</span></div>
+        <span class="company">Associació Cultural Storyville · Becaria IT</span>
+        <p>Mantenimiento y optimización de la web corporativa utilizando WordPress. Estas semanas han sido un no parar en la edición y puesta a punto de la web para el festival de este año, actualizando la estructura de los nuevos itinerarios de clase y asegurando que cada sección refleje la energía del festival antes de las inscripciones.</p>
       </div>
+
       <div class="card">
-        <div class="card-header"><span class="date">2023 - Actualidad</span></div>
-        <span class="company">Events · Atención al público</span>
-        <p>Gestión operativa, resolución de incidencias y comunicación directa en recintos culturales.</p>
+        <div class="card-header"><span class="date">sept. 2023 - actualidad</span></div>
+        <span class="company">Events · Acomodadora y Taquillera</span>
+        <p>Responsable de la atención directa al público y la gestión operativa en un recinto cultural. Este rol me ha permitido desarrollar resolución de problemas en entornos rápidos y comunicación asertiva.</p>
+        <ul>
+          <li><b>Gestión de sistemas:</b> Venta y cobro mediante terminales electrónicos.</li>
+          <li><b>Atención al cliente:</b> Asesoramiento personalizado sobre servicios y productos.</li>
+          <li><b>Logística y seguridad:</b> Control de acceso y cumplimiento de normativas.</li>
+          <li><b>Apoyo digital:</b> Gestión ocasional de redes sociales del teatro.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="date">feb. 2023 - jun. 2023</span></div>
+        <span class="company">Ninfa · Dependienta (Prácticas)</span>
+        <p>Gestión operativa con enfoque multilingüe y logístico. Perfeccioné mi organización técnica mediante administración de sistemas de paquetería.</p>
+        <ul>
+          <li><b>Logística y Digital:</b> Administración de puntos de recogida (Nacex, GLS, Boyacá).</li>
+          <li><b>Soporte Documental:</b> Gestión de impresión e inventario de prensa.</li>
+          <li><b>Atención:</b> Resolución de incidencias en Catalán, Castellano e Inglés.</li>
+        </ul>
       </div>
     </section>
 
     <section id="educacion">
       <h2>Educación</h2>
+
       <div class="card">
-        <span class="company">Institut Pedralbes (2024-2026)</span>
+        <div class="card-header"><span class="date">2024 – 2026</span></div>
+        <span class="company">Institut Pedralbes</span>
         <h3>Grado Superior en DAM</h3>
-        <p>Especialización en desarrollo de aplicaciones multiplataforma y gestión de datos.</p>
+        <p>Desarrollo de soluciones integrales con enfoque en arquitectura de servicios y gestión avanzada de datos.</p>
+        <ul>
+          <li><b>Backend:</b> APIs con Node.js, Express y Docker.</li>
+          <li><b>Gestión de Datos:</b> SQL y NoSQL (MongoDB).</li>
+          <li><b>Comunicaciones:</b> Tiempo real con WebSockets y Fetch API.</li>
+          <li><b>IA Aplicada:</b> Integración de modelos preentrenados y agentes inteligentes.</li>
+          <li><b>Herramientas:</b> Git, Postman y XML.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="date">2022 – 2024</span></div>
+        <span class="company">IES Can Puig</span>
+        <h3>Bachillerato, Humanidades y Ciencias Sociales</h3>
+        <p>Enfoque en el desarrollo del pensamiento crítico y el análisis de la realidad cultural, artística y económica.</p>
+        <ul>
+          <li><b>Análisis:</b> Fundamentos de economía de mercado y modelos de negocio.</li>
+          <li><b>Lógica:</b> Métodos matemáticos para interpretación de datos sociales.</li>
+          <li><b>Competencia Lingüística:</b> Alta capacidad de redacción y síntesis en múltiples lenguas.</li>
+        </ul>
       </div>
     </section>
 
     <section id="premios">
-      <h2>Logros y premios</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-        <div class="card">
-          <h3>🏆 Finalista - Premios FPEmprèn 2025</h3>
-          <p>Seleccionada entre los mejores proyectos del área metropolitana por la viabilidad de SafeHer.</p>
-        </div>
-        <div class="card">
-          <h3>🥉 3er Puesto - Concurso iFest 2024</h3>
-          <p>Premiada por la innovación tecnológica al integrar IA en wearables de seguridad.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="idiomas">
-      <h2>Idiomas</h2>
+      <h2>Logros y Premios</h2>
       <div class="card">
-        <p><b>Catalán:</b> C1 Suficiència | <b>Español:</b> Nativo | <b>Inglés:</b> B2 First Certificate</p>
+        <h3>🏆 Finalista - Premios FPEmprèn 2025</h3>
+        <p>Seleccionada en la 16ª edición entre los mejores proyectos de FP. Implicó la presentación de un plan de negocio avanzado y pitch ante el jurado en CaixaForum Barcelona.</p>
+      </div>
+      <div class="card">
+        <h3>🥉 3er Puesto - Concurso iFest 2024</h3>
+        <p>Galardonada por la innovación al diseñar una solución de seguridad femenina que integra IA y wearables.</p>
       </div>
     </section>
 
   </main>
 
   <footer>
-    <p>© 2026 Marta | <a href="https://www.linkedin.com/in/marta-haro/" style="color: var(--accent-pink);">LinkedIn</a> | <a href="https://github.com/mxrta22" style="color: var(--accent-pink);">GitHub</a></p>
+    <p>© 2026 Marta Haro | <a href="https://www.linkedin.com/in/marta-haro/" style="color: var(--accent-pink);">LinkedIn</a> | <a href="https://github.com/mxrta22" style="color: var(--accent-pink);">GitHub</a></p>
   </footer>
 
 </body>
