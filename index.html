@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marta Haro | Portfolio Full Stack & DAM</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
         :root {
             --bg: #0f0a19;
@@ -47,6 +48,24 @@
             text-transform: uppercase;
         }
         nav a:hover { color: var(--accent-pink); }
+
+        .social-links {
+            position: fixed;
+            top: 25px;
+            right: 30px;
+            display: flex;
+            gap: 12px;
+            z-index: 1001;
+        }
+        .social-links a {
+            color: var(--text-main);
+            font-size: 1.4rem;
+            transition: 0.3s;
+        }
+        .social-links a:hover {
+            color: var(--accent-pink);
+            transform: scale(1.15);
+        }
 
         .hero {
             height: 100vh;
@@ -149,17 +168,23 @@
             background: #8b6fff;
             transform: translateY(-2px);
         }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
         @media (max-width: 900px) {
             .hero { flex-direction: column; text-align: center; justify-content: center; }
+            .social-links { position: static; justify-content: center; margin-top: 15px; }
         }
     </style>
 </head>
 <body>
+
+    <!-- Enlaces sociales (arriba a la derecha) -->
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/marta-haro/" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/Mxrta22" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
 
     <nav>
         <a href="#home">Inicio</a>
@@ -167,7 +192,7 @@
         <a href="#proyectos">Proyectos</a>
         <a href="#experiencia">Experiencia</a>
         <a href="#educacion">Educación</a>
-        <a href="#aptitudes">Aptitudes</a>
+        <a href="#premios">Premios</a>
     </nav>
 
     <header class="hero" id="home">
@@ -224,21 +249,28 @@
                     <li><b>Interfaz:</b> Vue 3.5 + Vuetify</li>
                     <li><b>Metodología:</b> Agile/Kanban + Git</li>
                 </ul>
-                <a href="https://github.com/inspedralbes/tr2-reptes-tr2-g5" class="btn-github" target="_blank">Ver Repositorio</a>
+                <a href="https://github.com/inspedralbes/tr2-reptes-tr2-g5" class="btn-github" target="_blank">
+                    <i class="fab fa-github"></i> Ver Repositorio
+                </a>
             </div>
             <div class="card">
-                <h3>FitAI - Entrenamiento Inteligente</h3>
-                <p>Plataforma web para sesiones de entrenamiento colaborativo en tiempo real con IA.</p>
+                <h3>🏎️ Type Racer Royale (FitAI)</h3>
+                <p>Plataforma web para sesiones de entrenamiento colaborativo en tiempo real con IA y mecánicas competitivas.</p>
                 <ul>
                     <li><b>IA & Computer Vision:</b> MoveNet (TensorFlow.js)</li>
                     <li><b>Arquitectura:</b> API REST + WebSockets</li>
                     <li><b>DevOps:</b> Docker + Nginx</li>
                 </ul>
+                <a href="https://github.com/inspedralbes/tr1-type-racer-royale-dam_25_26_tr1g2" class="btn-github" target="_blank">
+                    <i class="fab fa-github"></i> Ver Repositorio
+                </a>
             </div>
             <div class="card">
                 <h3>🎮 Juego en Unity</h3>
                 <p>Desarrollo de un videojuego interactivo con C# y Unity.</p>
-                <a href="https://github.com/inspedralbes/tr3-joc-martaharo" class="btn-github" target="_blank">Ver Repositorio</a>
+                <a href="https://github.com/inspedralbes/tr3-joc-martaharo" class="btn-github" target="_blank">
+                    <i class="fab fa-github"></i> Ver Repositorio
+                </a>
             </div>
         </section>
 
@@ -269,12 +301,6 @@
                 <div class="card-header"><span class="date">2024 – 2026</span></div>
                 <span class="company">Institut Pedralbes</span>
                 <h3>Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
-                <ul>
-                    <li>Backend con Node.js, Express y Docker</li>
-                    <li>Gestión de datos SQL y NoSQL</li>
-                    <li>WebSockets y arquitecturas en tiempo real</li>
-                    <li>Integración de Inteligencia Artificial</li>
-                </ul>
             </div>
             <div class="card">
                 <div class="card-header"><span class="date">2022 – 2024</span></div>
@@ -283,60 +309,31 @@
             </div>
         </section>
 
-        <!-- Aptitudes -->
-        <section id="aptitudes">
-            <h2>Aptitudes</h2>
-            <div class="card skills-grid">
-                <div>
-                    <h3>Backend &amp; Desarrollo</h3>
-                    <p>Node.js • Express • Java • REST APIs • WebSockets</p>
-                </div>
-                <div>
-                    <h3>Frontend &amp; Frameworks</h3>
-                    <p>Vue.js • Vuetify • HTML/CSS • JavaScript</p>
-                </div>
-                <div>
-                    <h3>Bases de Datos</h3>
-                    <p>MySQL • PostgreSQL • MongoDB • SQL</p>
-                </div>
-                <div>
-                    <h3>DevOps &amp; Herramientas</h3>
-                    <p>Docker • Git • Postman • Nginx • WordPress</p>
-                </div>
-                <div>
-                    <h3>Inteligencia Artificial</h3>
-                    <p>TensorFlow.js • MoveNet • Modelos preentrenados</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certificaciones y Premios -->
-        <section id="certificaciones">
-            <h2>Certificaciones y Premios</h2>
+        <!-- Premios -->
+        <section id="premios">
+            <h2>Premios y Reconocimientos</h2>
+            
             <div class="card">
                 <h3>🏆 Finalista - Premios FPEmprèn 2025</h3>
-                <p>Proyecto SafeHer</p>
+                <p><strong>Expedido por:</strong> Fundació BCN Formació Professional · jun. 2025</p>
+                <p><strong>Asociado con:</strong> Institut Pedralbes</p>
+                <p>Seleccionada como finalista en la 16ª edición de los Premios FPEmprèn entre los mejores proyectos de Formación Profesional del área metropolitana de Barcelona. El proyecto SafeHer fue elegido para la segunda fase del certamen, lo que implicó la presentación de un plan de negocio avanzado, un vídeo promocional (pitch) y la justificación del impacto del proyecto en los Objetivos de Desarrollo Sostenible (ODS). Fuimos invitados a la gala final en el CaixaForum Barcelona como reconocimiento a la calidad, innovación y viabilidad de la propuesta en el sector de la seguridad y el bienestar social.</p>
             </div>
+
             <div class="card">
-                <h3>🥉 3er Puesto - Concurso iFest 2024</h3>
-                <p>Proyecto SafeHer</p>
-            </div>
-            <div class="card">
-                <h3>Certificat de nivell de suficiència de català (C1)</h3>
-                <p>Generalitat de Catalunya - jun. 2024</p>
-            </div>
-            <div class="card">
-                <h3>First Certificate in English (B2)</h3>
-                <p>Cambridge University Press & Assessment - oct. 2022</p>
+                <h3>🥉 3er Puesto - Concurso de Ideas Emprendedoras (iFest)</h3>
+                <p><strong>Expedido por:</strong> Institut Pedralbes · dic. 2024</p>
+                <p><strong>Asociado con:</strong> Institut Pedralbes</p>
+                <p>Galardonada con el tercer premio en la fase interna del certamen de emprendimiento iFest por el proyecto SafeHer. El reconocimiento premió la capacidad de innovación del equipo al diseñar una solución de seguridad femenina que integra Inteligencia Artificial y dispositivos wearables. Se valoró especialmente el análisis de mercado (14,2M de usuarias potenciales), la viabilidad del plan de negocio y la calidad del "pitch" de presentación ante el jurado.</p>
             </div>
         </section>
 
     </main>
 
-    <footer style="text-align:center; padding:40px 20px; color:var(--text-dim); font-size:0.9rem;">
+    <footer style="text-align:center; padding:50px 20px; color:var(--text-dim); font-size:0.9rem;">
         <p>© 2026 Marta Haro | 
             <a href="https://www.linkedin.com/in/marta-haro/" style="color:var(--accent-pink);">LinkedIn</a> | 
-            <a href="https://github.com/mxrta22" style="color:var(--accent-pink);">GitHub</a>
+            <a href="https://github.com/Mxrta22" style="color:var(--accent-pink);">GitHub</a>
         </p>
     </footer>
 
